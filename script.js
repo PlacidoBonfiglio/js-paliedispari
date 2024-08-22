@@ -18,20 +18,21 @@ palButton.addEventListener('click', function() {
     userWord = userWordField.value.trim();
 
     mirroredWord(userWord);
-    console.log(userWord);
 
 })
 
 // Creo funzione che specchia la parola
 function mirroredWord(userWord) {
-    //return userWord.split('').reverse().join('');
+    let reversedWord = '';
 
     for (let i = userWord.length - 1; i >= 0; i--) {
-        
-        let reversedWord = '';
         reversedWord += userWord.charAt(i);
+        
     }
+    console.log(reversedWord);
     return reversedWord;
+
+    
 }
 
 
