@@ -49,3 +49,14 @@ function isPolindrome(userWord) {
 
 
 // ESERCIZIO 2
+
+// Raccolgo elementi dal DOM
+// Chiedere all'utente di scegliere tra pari e dispari
+// Chiedere all'utente di scegliere un numero da 1 a 5
+// Creare una funzione che genera un numero da 1 a 5 
+// Sommare il numero scelto dall'utente e il numero generato randomicamente
+// Creare una funzione che stabilisce se la somma dei due numeri è pari o dispari
+// Stampare in pagina il risultato
+
+// Raccolgo gli elementi dal DOM
+const resultElement = document.getElementById('result');
