@@ -26,10 +26,12 @@ palButton.addEventListener('click', function() {
 function mirroredWord(userWord) {
     //return userWord.split('').reverse().join('');
 
-    for (let i = userWord.length - 1; i <= 0; i--) {
-        userWord.charAt(i);
+    for (let i = userWord.length - 1; i >= 0; i--) {
+        
+        let reversedWord = '';
+        reversedWord += userWord.charAt(i);
     }
-    return userWord;
+    return reversedWord;
 }
 
 
