@@ -31,11 +31,11 @@ function isPolindrome(userWord) {
     }
 
     if (userWord === reversedWord) {
-        palResult.innerText = 'La parola che hai scritto è palindroma'
+        palResult.innerHTML = `La parola che hai scritto è <strong>palindroma</strong>`;
     } else {
-        palResult.innerText = 'La parola che hai scritto non è palindroma'
+        palResult.innerHTML = `La parola che hai scritto <strong>non</strong> è <strong>palindroma</strong>`;
     }
-    return;
+    return userWord;
 }
 
 
