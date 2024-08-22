@@ -17,28 +17,26 @@ const palResult = document.getElementById('pal-result');
 palButton.addEventListener('click', function() {
     userWord = userWordField.value.trim();
 
-    mirroredWord(userWord);
+    isPolindrome(userWord);
+    console.log(isPolindrome(userWord));
 
 })
 
 // Creo funzione che specchia la parola
-function mirroredWord(userWord) {
+function isPolindrome(userWord) {
     let reversedWord = '';
 
     for (let i = userWord.length - 1; i >= 0; i--) {
         reversedWord += userWord.charAt(i);
-        
     }
-    console.log(reversedWord);
-    return reversedWord;
 
-    
+    if (userWord === reversedWord) {
+        palResult.innerText = 'La parola che hai scritto è palindroma'
+    } else {
+        palResult.innerText = 'La parola che hai scritto non è palindroma'
+    }
+    return;
 }
-
-
-
-
-
 
 
 // ESERCIZIO 2
