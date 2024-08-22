@@ -60,3 +60,54 @@ function isPolindrome(userWord) {
 
 // Raccolgo gli elementi dal DOM
 const resultElement = document.getElementById('result');
+
+// Chiedere all'utente di scegliere tra pari e dispari
+const userChoice = prompt('Scegli "pari" o "dispari"', 'pari');
+
+// Chiedere all'utente di scegliere un numero da 1 a 5
+const userNumber = parseInt(prompt('Scegli un numero da 1 a 5', 3));
+console.log('numero utente: ', userNumber);
+
+// Creo variabile per il numer casuale della CPU
+let cpuNumber = 0;
+
+// Creare una funzione che genera un numero da 1 a 5 
+function getRandomNumber(cpuNumber) {
+
+    // Calcolo numero casuale da 1 a 5 creando una variabile
+    let randomNumber = parseInt(Math.floor(Math.random() * 5) + 1);
+
+    // Sommo il valore di cpuNumber al valore del numero generato randomicamente
+    return cpuNumber += randomNumber;
+}
+
+// Sfrutto la funzione che genera il numero casuale
+getRandomNumber(cpuNumber);
+console.log('Funzione numRandom: ', getRandomNumber(cpuNumber));
+
+// Creo variabile che somma il numero casuale della funzione al numero scelto dall'utente
+const sum = getRandomNumber(cpuNumber) + userNumber;
+console.log('somma: ', sum);
+
+// Creare una funzione che stabilisce se la somma dei due numeri è pari o dispari
+function isEven () {
+    if (sum % 2 === 0 && userChoice === 'pari') {
+        resultElement.innerHTML = `
+        <strong>Hai vinto!</strong> Il tuo numero: <strong>${userNumber}</strong>, 
+        il numero della CPU è: <strong>${cpuNumber}</strong>
+        `;
+    } else if (sum % 2 !== 0 && userChoice === 'dispari') {
+        resultElement.innerHTML = `
+        <strong>Hai vinto!</strong> Il tuo numero: <strong>${userNumber}</strong>, 
+        il numero della CPU è: <strong>${cpuNumber}</strong>
+        `;
+
+    } else {
+        resultElement.innerHTML = `
+        <strong>Hai perso!</strong> Il tuo numero: <strong>${userNumber}</strong>, 
+        il numero della CPU è: <strong>${cpuNumber}</strong>
+        `;
+    }
+}
+
+isEven();
