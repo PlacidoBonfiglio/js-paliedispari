@@ -81,31 +81,32 @@ function getRandomNumber(cpuNumber) {
     return cpuNumber += randomNumber;
 }
 
+// assegnoa cpuNumber il valore della funzione
+cpuNumber = getRandomNumber(cpuNumber);
+
 // Sfrutto la funzione che genera il numero casuale
 getRandomNumber(cpuNumber);
-console.log('Funzione numRandom: ', getRandomNumber(cpuNumber));
 
 // Creo variabile che somma il numero casuale della funzione al numero scelto dall'utente
-const sum = getRandomNumber(cpuNumber) + userNumber;
-console.log('somma: ', sum);
+const sum = cpuNumber + userNumber;
 
 // Creare una funzione che stabilisce se la somma dei due numeri è pari o dispari
 function isEven () {
     if (sum % 2 === 0 && userChoice === 'pari') {
         resultElement.innerHTML = `
         <strong>Hai vinto!</strong> Il tuo numero: <strong>${userNumber}</strong>, 
-        il numero della CPU è: <strong>${cpuNumber}</strong>
+        il numero della CPU è: <strong>${cpuNumber}</strong>, TOT: <strong>${sum}</strong>
         `;
     } else if (sum % 2 !== 0 && userChoice === 'dispari') {
         resultElement.innerHTML = `
         <strong>Hai vinto!</strong> Il tuo numero: <strong>${userNumber}</strong>, 
-        il numero della CPU è: <strong>${cpuNumber}</strong>
+        il numero della CPU è: <strong>${cpuNumber}</strong>, TOT: <strong>${sum}</strong>
         `;
 
     } else {
         resultElement.innerHTML = `
         <strong>Hai perso!</strong> Il tuo numero: <strong>${userNumber}</strong>, 
-        il numero della CPU è: <strong>${cpuNumber}</strong>
+        il numero della CPU è: <strong>${cpuNumber}</strong>, TOT: <strong>${sum}</strong>
         `;
     }
 }
